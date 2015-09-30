@@ -24,7 +24,7 @@ public class Libro  implements Serializable{
     @NotNull
     private Autor autor;
     @NotNull 
-    private Image portada = new ImageIcon("/resources/").getImage();
+    private Image portada = new ImageIcon("/res/").getImage();
     private Boolean prestado;    
     private Integer numero_prestamos;
 
