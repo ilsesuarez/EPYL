@@ -7,8 +7,7 @@ package com.pwsolutions.epyl.model;
 
 import java.awt.Image;
 import java.io.Serializable;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import java.util.List;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
@@ -28,7 +27,7 @@ public class Usuario implements Serializable{
     private String nombre_usuario;
     
     @NotNull
-    private String no_cta;
+    private String numero_cuenta;
     
     @NotNull
     private String contraseña;
@@ -40,8 +39,21 @@ public class Usuario implements Serializable{
     private String facultad;
     
     private int puntuacion;
-    
 
+    private List<Libro> libros;
+
+    public Usuario(int id_usuario, String correo, String nombre_usuario, String no_cta, String contraseña, String nombre_completo, String facultad) {
+        this.id_usuario = id_usuario;
+        this.correo = correo;
+        this.nombre_usuario = nombre_usuario;
+        this.numero_cuenta = no_cta;
+        this.contraseña = contraseña;
+        this.nombre_completo = nombre_completo;
+        this.facultad = facultad;
+        this.puntuacion = 0;
+        
+    }
+        
     public int getId_usuario() {
         return id_usuario;
     }
@@ -66,12 +78,12 @@ public class Usuario implements Serializable{
         this.nombre_usuario = nombre_usuario;
     }
 
-    public String getNo_cta() {
-        return no_cta;
+    public String getNumero_cuenta() {
+        return numero_cuenta;
     }
 
-    public void setNo_cta(String no_cta) {
-        this.no_cta = no_cta;
+    public void setNumero_cuenta(String numero_cuenta) {
+        this.numero_cuenta = numero_cuenta;
     }
 
     public String getContraseña() {
@@ -106,18 +118,6 @@ public class Usuario implements Serializable{
         this.puntuacion = puntuacion;
     }
 
-    public Usuario(int id_usuario, String correo, String nombre_usuario, String no_cta, String contraseña, String nombre_completo, String facultad) {
-        this.id_usuario = id_usuario;
-        this.correo = correo;
-        this.nombre_usuario = nombre_usuario;
-        this.no_cta = no_cta;
-        this.contraseña = contraseña;
-        this.nombre_completo = nombre_completo;
-        this.facultad = facultad;
-        this.puntuacion = 0;
-    }
-    
-    
     public void consultaHistorial(){
     }
     
