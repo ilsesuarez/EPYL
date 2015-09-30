@@ -19,25 +19,20 @@ public class Libro  implements Serializable{
     
     @Id
     private int id_libro;
-    
     @NotNull
-    private String titulo;
-    
+    private String titulo;    
     @NotNull
     private Autor autor;
-    
-    /*
-    *Carga de imagen.
-    */
     @NotNull 
-    private Image portada = new ImageIcon("").getImage();
-    
-    private Boolean prestado;
-    
+    private Image portada = new ImageIcon("/resources/").getImage();
+    private Boolean prestado;    
     private Integer numero_prestamos;
 
-    public Libro(int id_libro, String titulo, String autor, Image portada) {
-        this.id_libro = id_libro;
+    public Libro(){}
+    public Libro(String titulo,
+                 String autor, 
+                 Image portada) 
+    {
         this.titulo = titulo;
         this.portada = portada;
     }

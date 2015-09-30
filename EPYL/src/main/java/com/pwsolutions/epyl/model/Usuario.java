@@ -24,7 +24,7 @@ public class Usuario implements Serializable{
     private String correo;
     
     @NotNull
-    private String nombre_usuario;
+    private String uname;
     
     @NotNull
     private String numero_cuenta;
@@ -36,16 +36,22 @@ public class Usuario implements Serializable{
     private String nombre_completo;
     
     @NotNull
-    private String facultad;
+    private Facultad facultad;
     
     private int puntuacion;
 
     private List<Libro> libros;
 
-    public Usuario(int id_usuario, String correo, String nombre_usuario, String no_cta, String contraseña, String nombre_completo, String facultad) {
-        this.id_usuario = id_usuario;
+    public Usuario(){}
+    public Usuario(String correo, 
+                   String uname, 
+                   String no_cta, 
+                   String contraseña, 
+                   String nombre_completo, 
+                   Facultad facultad) 
+    {    
         this.correo = correo;
-        this.nombre_usuario = nombre_usuario;
+        this.uname = uname;
         this.numero_cuenta = no_cta;
         this.contraseña = contraseña;
         this.nombre_completo = nombre_completo;
@@ -70,12 +76,12 @@ public class Usuario implements Serializable{
         this.correo = correo;
     }
 
-    public String getNombre_usuario() {
-        return nombre_usuario;
+    public String getUname() {
+        return uname;
     }
 
-    public void setNombre_usuario(String nombre_usuario) {
-        this.nombre_usuario = nombre_usuario;
+    public void setUname(String uname) {
+        this.uname = uname;
     }
 
     public String getNumero_cuenta() {
@@ -102,11 +108,11 @@ public class Usuario implements Serializable{
         this.nombre_completo = nombre_completo;
     }
 
-    public String getFacultad() {
+    public Facultad getFacultad() {
         return facultad;
     }
 
-    public void setFacultad(String facultad) {
+    public void setFacultad(Facultad facultad) {
         this.facultad = facultad;
     }
 

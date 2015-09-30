@@ -20,16 +20,25 @@ public class Autor implements Serializable{
     private int id_autor;
     
     @NotNull
-    private String nombre_completo_Autor;
-
-    
-    //Pendiente--------------
+    private String ap_paternoAutor;
+    @NotNull
+    private String ap_maternoAutor;
+    @NotNull
+    private String nombreAutor;
+    @NotNull
     private List lista_libros;
     
-    
-    public Autor(int id_autor, String nombre_completo_Autor) {
-        this.id_autor = id_autor;
-        this.nombre_completo_Autor = nombre_completo_Autor;
+    //Método Constructor 
+    public Autor(){}
+    public Autor(String ap_paternoAutor, 
+                 String ap_maternoAutor, 
+                 String nombreAutor, 
+                 List lista_libros)
+    {
+        this.ap_paternoAutor = ap_paternoAutor;
+        this.ap_maternoAutor = ap_maternoAutor;
+        this.nombreAutor = nombreAutor;
+        this.lista_libros = lista_libros;
     }
 
     public int getId_autor() {
@@ -40,12 +49,28 @@ public class Autor implements Serializable{
         this.id_autor = id_autor;
     }
 
-    public String getNombre_completo_Autor() {
-        return nombre_completo_Autor;
+    public String getAp_paternoAutor() {
+        return ap_paternoAutor;
     }
 
-    public void setNombre_completo_Autor(String nombre_completo_Autor) {
-        this.nombre_completo_Autor = nombre_completo_Autor;
+    public void setAp_paternoAutor(String ap_paternoAutor) {
+        this.ap_paternoAutor = ap_paternoAutor;
+    }
+
+    public String getAp_maternoAutor() {
+        return ap_maternoAutor;
+    }
+
+    public void setAp_maternoAutor(String ap_maternoAutor) {
+        this.ap_maternoAutor = ap_maternoAutor;
+    }
+
+    public String getNombreAutor() {
+        return nombreAutor;
+    }
+
+    public void setNombreAutor(String nombreAutor) {
+        this.nombreAutor = nombreAutor;
     }
 
     public List getLista_libros() {
@@ -55,6 +80,6 @@ public class Autor implements Serializable{
     public void setLista_libros(List lista_libros) {
         this.lista_libros = lista_libros;
     }
-      
     
 }
+
