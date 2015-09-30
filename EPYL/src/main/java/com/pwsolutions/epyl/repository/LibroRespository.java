@@ -5,10 +5,18 @@
  */
 package com.pwsolutions.epyl.repository;
 
+import com.pwsolutions.epyl.model.Libro;
+import java.util.List;
+import org.springframework.data.repository.CrudRepository;
+
 /**
  *
  * @author nazara
  */
-public class LibroRepository {
+public interface LibroRespository extends CrudRepository<Libro, Integer> {
+    
+    @Override
+    List<Libro> findAll();
     
 }
+
