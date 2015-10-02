@@ -5,9 +5,7 @@
  */
 package com.pwsolutions.epyl.model;
 
-import java.awt.Image;
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
@@ -39,9 +37,7 @@ public class Usuario implements Serializable{
     private Facultad facultad;
     
     private int puntuacion;
-
-    private List<Libro> libros;
-
+   
     public Usuario(){}
     public Usuario(String correo, 
                    String uname, 
@@ -124,22 +120,7 @@ public class Usuario implements Serializable{
         this.puntuacion = puntuacion;
     }
 
-    public void consultaHistorial(){
-    }
-    
-    
-    public void consultaActividad(){
-    }
-    
-    
-    public void aceptarPrestamo(){
-    }
-    
-    
-    public void registrarLibro(String autor, String titulo, Image imagen){
-    }
-    
-    
+       
     
     
     

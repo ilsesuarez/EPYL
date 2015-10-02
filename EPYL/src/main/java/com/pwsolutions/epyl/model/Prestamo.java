@@ -31,6 +31,7 @@ public class Prestamo {
     private Usuario usuario_prestamista;
     private int id_biblioteca;
 
+    public Prestamo(){}
     public Prestamo(Date fecha_prestamo, Date fecha_ddevolucion, int plazo, boolean aprobado, Time hora, double puntuacion, int id_libro, Usuario usuario_prestatario, Usuario usuario_prestamista, int id_biblioteca) {
         this.fecha_prestamo = fecha_prestamo;
         this.fecha_ddevolucion = fecha_ddevolucion;
