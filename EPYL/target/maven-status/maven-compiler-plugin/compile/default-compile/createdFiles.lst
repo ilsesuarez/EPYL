@@ -1,0 +1,17 @@
+com/pwsolutions/epyl/repository/AutorRespository.class
+com/pwsolutions/epyl/controller/AutorControlador.class
+com/pwsolutions/epyl/model/Facultad.class
+com/pwsolutions/epyl/model/Top5.class
+com/pwsolutions/epyl/repository/UsuarioRespository.class
+com/pwsolutions/epyl/model/Autor.class
+com/pwsolutions/epyl/repository/LibroRespository.class
+com/pwsolutions/epyl/model/Usuario.class
+com/pwsolutions/epyl/repository/PrestamoRepository.class
+com/pwsolutions/epyl/repository/BibliotecaRepository.class
+com/pwsolutions/epyl/model/Libro.class
+com/pwsolutions/epyl/repository/FacultadRepository.class
+com/pwsolutions/epyl/controller/PrestamoControlador.class
+com/pwsolutions/epyl/controller/UsuarioControlador.class
+com/pwsolutions/epyl/controller/LibroControlador.class
+com/pwsolutions/epyl/model/Biblioteca.class
+com/pwsolutions/epyl/model/Prestamo.class
