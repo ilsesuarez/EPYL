@@ -37,6 +37,8 @@ public class Usuario implements Serializable{
     private Facultad facultad;
     
     private int puntuacion;
+    
+    //Libros?
    
     public Usuario(){}
     public Usuario(String correo, 

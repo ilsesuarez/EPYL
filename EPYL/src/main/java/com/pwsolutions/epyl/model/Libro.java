@@ -7,6 +7,7 @@ package com.pwsolutions.epyl.model;
 
 import java.awt.Image;
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Id;
 import javax.swing.ImageIcon;
 import javax.validation.constraints.NotNull;
@@ -22,7 +23,7 @@ public class Libro  implements Serializable{
     @NotNull
     private String titulo;    
     @NotNull
-    private Autor autor;
+    private List<Autor> autores;
     @NotNull 
     private Image portada = new ImageIcon("/res/").getImage();
     private Boolean prestado;    
@@ -57,12 +58,12 @@ public class Libro  implements Serializable{
      *
      * @return Autor
      */
-    public Autor getAutor() {
-        return autor;
+    public List<Autor> getAutores() {
+        return autores;
     }
 
-    public void setAutor(Autor autor) {
-        this.autor = autor;
+    public void setAutor(List<Autor> autores) {
+        this.autores = autores;
     }
 
     public Image getPortada() {
