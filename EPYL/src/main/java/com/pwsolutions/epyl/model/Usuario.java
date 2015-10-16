@@ -6,6 +6,7 @@
 package com.pwsolutions.epyl.model;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
@@ -38,7 +39,7 @@ public class Usuario implements Serializable{
     
     private int puntuacion;
     
-    //Libros?
+    private List<Libro> libros;
    
     public Usuario(){}
     public Usuario(String correo, 
@@ -46,7 +47,8 @@ public class Usuario implements Serializable{
                    String no_cta, 
                    String contraseña, 
                    String nombre_completo, 
-                   Facultad facultad) 
+                   Facultad facultad,
+                   List<Libro> libros) 
     {    
         this.correo = correo;
         this.uname = uname;
@@ -55,7 +57,7 @@ public class Usuario implements Serializable{
         this.nombre_completo = nombre_completo;
         this.facultad = facultad;
         this.puntuacion = 0;
-        
+        this.libros = null;
     }
         
     public int getId_usuario() {
@@ -120,6 +122,14 @@ public class Usuario implements Serializable{
 
     public void setPuntuacion(int puntuacion) {
         this.puntuacion = puntuacion;
+    }
+
+    public List<Libro> getLibros() {
+        return libros;
+    }
+
+    public void setLibros(List<Libro> libros) {
+        this.libros = libros;
     }
 
        

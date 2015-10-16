@@ -32,10 +32,12 @@ public class Libro  implements Serializable{
     public Libro(){}
     public Libro(String titulo,
                  String autor, 
-                 Image portada) 
+                 Image portada,
+                 List<Autor> autores) 
     {
         this.titulo = titulo;
         this.portada = portada;
+        this.autores = autores;
     }
 
     public int getId_libro() {
