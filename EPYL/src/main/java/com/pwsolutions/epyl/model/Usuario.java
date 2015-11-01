@@ -6,6 +6,7 @@
 package com.pwsolutions.epyl.model;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
@@ -22,7 +23,7 @@ public class Usuario implements Serializable{
     private String correo;
     
     @NotNull
-    private String uname;
+    private String username;
     
     @NotNull
     private String numero_cuenta;
@@ -37,25 +38,14 @@ public class Usuario implements Serializable{
     private Facultad facultad;
     
     private int puntuacion;
+    
+    private String rol;
+    
+    private List<Libro> libros;
+    
    
     public Usuario(){}
-    public Usuario(String correo, 
-                   String uname, 
-                   String no_cta, 
-                   String contraseña, 
-                   String nombre_completo, 
-                   Facultad facultad) 
-    {    
-        this.correo = correo;
-        this.uname = uname;
-        this.numero_cuenta = no_cta;
-        this.contraseña = contraseña;
-        this.nombre_completo = nombre_completo;
-        this.facultad = facultad;
-        this.puntuacion = 0;
-        
-    }
-        
+            
     public int getId_usuario() {
         return id_usuario;
     }
@@ -72,12 +62,12 @@ public class Usuario implements Serializable{
         this.correo = correo;
     }
 
-    public String getUname() {
-        return uname;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getNumero_cuenta() {
@@ -112,6 +102,22 @@ public class Usuario implements Serializable{
         this.facultad = facultad;
     }
 
+    public List<Libro> getLibros() {
+        return libros;
+    }
+
+    public void setLibros(List<Libro> libros) {
+        this.libros = libros;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+    
     public int getPuntuacion() {
         return puntuacion;
     }
