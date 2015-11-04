@@ -7,11 +7,15 @@ package com.pwsolutions.epyl.controller;
 
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
 /**
  *
  * @author renejesusgv
  */
+@Controller("autorControlador")
+@Scope("session")
 public class AutorControlador implements Serializable {
     @PostConstruct
     public void init(){

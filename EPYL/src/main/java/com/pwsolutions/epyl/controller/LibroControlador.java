@@ -8,7 +8,6 @@ package com.pwsolutions.epyl.controller;
 import com.pwsolutions.epyl.model.Libro;
 import com.pwsolutions.epyl.repository.LibroRepository;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -44,7 +43,7 @@ public class LibroControlador implements Serializable{
     
     public void setTitulo(String t){
         libro.setTitulo(t);
-    }
+    }   
     
     public void guardaLibro(){
         libro_repository.save(libro);

@@ -7,6 +7,7 @@ package com.pwsolutions.epyl.repository;
 
 import com.pwsolutions.epyl.model.Libro;
 import java.util.List;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -15,9 +16,10 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface LibroRepository extends CrudRepository<Libro, Integer> {
     
-    @Override
+   @Override
     List<Libro> findAll();
     
+    @Query("SELECT l FROM Libro l WHERE l.titulo LIKE CONCAT('%',?1,'%')")
     List<Libro> findByParametro(String parametro);
 }
 

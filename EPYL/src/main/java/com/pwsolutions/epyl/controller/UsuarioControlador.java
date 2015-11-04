@@ -11,13 +11,15 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 /**
  * 
  * @author renejesusgv
  */
 
-@Controller("UsuarioControlador")
+@Controller("usuarioControlador")
 @Scope("session")
 
 public class UsuarioControlador implements Serializable {
@@ -31,6 +33,9 @@ public class UsuarioControlador implements Serializable {
     private LibroRepository libro_repository;
 
     private String busqueda;
+    
+    @Autowired
+    JavaMailSenderImpl mailSender;
     
     @PostConstruct
     public void init(){
@@ -55,6 +60,7 @@ public class UsuarioControlador implements Serializable {
     }
     
     public void guardaUsuario(){
+        
         verifica(usuario);
         usuario_repository.save(usuario);
         init();
@@ -88,5 +94,5 @@ public class UsuarioControlador implements Serializable {
         
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
-}
+    }
 }
