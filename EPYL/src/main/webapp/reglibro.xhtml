@@ -24,22 +24,31 @@ and open the template in the editor.
             </h:panelGrid> 
         </ui:define>
         <ui:define name="main" >
-            <p:dataTable var="top5lib" value="#{TopControlador.titulos}">
-                <p:column headerText="Título">
-                    <h:outputText value="El Capital" />
-                    <h:outputText value="La Torre Oscura VII" />
-                    <h:outputText value="El Mundo y Sus Demonios" />
-                    <h:outputText value="Los 1,001 Años de la Lengua Española" />
-                    <h:outputText value="Psicología Cuántica y del Espíritu" />
-                </p:column>
-                <p:column headerText="Autor">
-                    <h:outputText value="Karl Marx" />
-                    <h:outputText value="Stephen King" />
-                    <h:outputText value="Carl Sagan" />
-                    <h:outputText value="Antonio Alatorre" />
-                    <h:outputText value="Raquel Levinstein" />
-                </p:column>
-            </p:dataTable>         
+            <h:form>
+                  <p:fileUpload fileUploadListener="#{LibroControlador.handleFileUpload}" 
+                                mode="advanced" 
+                                dragDropSupport="true"
+                                multiple="true" update="messages" 
+                                sizeLimit="10000000" fileLimit="10"  />
+                <p:growl id="messages" showDetail="true" />                               
+                <p:commandButton value="Check"  ajax="false" icon="ui-icon-check"/>
+            </h:form>
+            <h:form>
+                        <h:outputLabel value="busqueda" />
+                        <p:inputText value="#{usuarioController.busqueda}"/>
+                        <p:commandButton actionListener="#{usuarioController.busquedaLibros(usuarioController.busqueda)}"  
+                                         value="buscar"
+                                         update="@form"
+                                         />
+                        <br/>
+                        <p:dataTable value="#{usuarioController.libros}" var="_libro">
+                            <p:column>
+                                <h:graphicImage width="50" value="data:image;base64,#{_libro.imagen}" />
+                                 #{_libro.titulo}-#{_libro.isbn}
+                            </p:column>
+                        </p:dataTable>
+                        
+                    </h:form>
         </ui:define>
         <ui:define name="sidebar" >
             <h:panelGrid columns="1" cellpadding="5">
