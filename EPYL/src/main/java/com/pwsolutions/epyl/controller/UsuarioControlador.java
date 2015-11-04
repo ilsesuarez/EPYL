@@ -54,6 +54,7 @@ public class UsuarioControlador implements Serializable {
     }
     
     public void guardaUsuario(){
+        verifica(usuario);
         usuario_repository.save(usuario);
         init();
     }
@@ -81,7 +82,8 @@ public class UsuarioControlador implements Serializable {
     public void setBusqueda(String busqueda) {
         this.busqueda = busqueda;
     }
-    
-    
-    
+
+    private void verifica(Usuario usuario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

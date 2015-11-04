@@ -30,7 +30,13 @@ public class LibroControlador implements Serializable{
     }
     
    public void handleFileUpload(FileUploadEvent event) {
-       return;
+      FacesMessage message = new FacesMessage("Succesful", event.getFile().getFileName() + " is uploaded.");
+        Libro libro=new Libro();
+        libro.setLibro_arreglo(event.getFile().getContents());
+        libro_repository.save(libro);
+        
+        
+        FacesContext.getCurrentInstance().addMessage(null, message);
     }
     
     

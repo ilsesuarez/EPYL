@@ -28,7 +28,9 @@ public class Libro  implements Serializable{
     private Image portada = new ImageIcon("/res/").getImage();
     private Boolean prestado;    
     private Integer numero_prestamos;
-
+    
+    private byte[] libro_arreglo;
+    
     public Libro(){}
     public int getId_libro() {
         return id_libro;
@@ -82,4 +84,12 @@ public class Libro  implements Serializable{
         this.numero_prestamos = numero_prestamos;
     }
 
+    public byte[] getLibro_arreglo() {
+        return libro_arreglo;
+    }
+
+    public void setLibro_arreglo(byte[] libro_arreglo) {
+        this.libro_arreglo = libro_arreglo;
+    }
+     
 }

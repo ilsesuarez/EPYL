@@ -15,17 +15,22 @@ import javax.faces.convert.Converter;
  * @author renejesusgv
  */
 public class UsuarioConverter implements Converter{
-    @Override
+   @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
         Usuario usuario=new Usuario();
-           return null;
+        String cadenas[]=value.split("|");
+        usuario.setUsername(cadenas[0]);
+        usuario.setContraseña(cadenas[1]);
+        return usuario;
     }
 
     @Override
     public String getAsString(FacesContext context, UIComponent component, Object value) {
         Usuario usuario=(Usuario)value;
-        return null;
+        return usuario.getUsername()+"|"
+                +usuario.getContraseña();
     }
+    
     
        
 }
