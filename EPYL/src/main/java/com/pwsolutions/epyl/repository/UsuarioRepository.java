@@ -7,6 +7,7 @@ package com.pwsolutions.epyl.repository;
 
 import com.pwsolutions.epyl.model.Usuario;
 import java.util.List;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -18,6 +19,9 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
     
     @Override
     List<Usuario> findAll();
+    
+    @Query("SELECT u FROM Usuario u WHERE u.usuario=? ")
+    public Usuario findByUsuario(String usuario);
     
 }
 

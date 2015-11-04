@@ -7,41 +7,61 @@ package com.pwsolutions.epyl.model;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
-/**
- *
- * @author renejesusgv
- */
+
+@Entity
+@Table(name="USUARIO")
 public class Usuario implements Serializable{
   
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_usuario;
     
     @NotNull
+    @Column(name = "CORREO",columnDefinition = "VARCHAR(30)")
     private String correo;
     
     @NotNull
+    @Column(name = "USERNAME",columnDefinition = "VARCHAR(15)")
     private String username;
     
     @NotNull
+    @Column(name = "NUMERODECUENTA",columnDefinition = "INTEGER(9)")
     private String numero_cuenta;
     
     @NotNull
+    @Column(name = "CONTRASEÑA",columnDefinition = "VARCHAR(32)")
     private String contraseña;
     
     @NotNull
+    @Column(name = "NOMBRECOMPLETO",columnDefinition = "VARCHAR(70)")
     private String nombre_completo;
     
-    @NotNull
+    @Transient
     private Facultad facultad;
     
+    @NotNull
+    @Column(name = "PUNTUACION",columnDefinition = "INTEGER(1)")
     private int puntuacion;
     
-
+    @NotNull
+    @Column(name = "rol",columnDefinition = "VARCHAR(10)")
     private String rol;
     
+    
+    @ManyToMany(cascade = CascadeType.REMOVE,
+            fetch = FetchType.EAGER)
     private List<Libro> libros;
     
    

@@ -1,18 +1,18 @@
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/repository/AutorRepository.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/repository/FacultadRepository.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/repository/PrestamoRepository.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/repository/LibroRepository.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/controller/UsuarioControlador.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/converter/UsuarioConverter.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/controller/AutorControlador.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/model/Autor.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/model/Facultad.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/controller/PrestamoControlador.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/controller/LibroControlador.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/model/Top5.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/model/Prestamo.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/repository/BibliotecaRepository.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/model/Usuario.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/repository/UsuarioRepository.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/model/Biblioteca.java
-/home/nazara/Devlabs/IS/EPYL/src/main/java/com/pwsolutions/epyl/model/Libro.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/converter/UsuarioConverter.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/model/Facultad.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/model/Top5.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/model/Prestamo.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/repository/BibliotecaRepository.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/controller/UsuarioControlador.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/repository/FacultadRepository.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/repository/LibroRepository.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/controller/LibroControlador.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/repository/PrestamoRepository.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/model/Usuario.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/model/Biblioteca.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/repository/UsuarioRepository.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/repository/AutorRepository.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/model/Autor.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/model/Libro.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/controller/AutorControlador.java
+/home/dbeltran/Ing/proyecto /EPYL/IS/EPYL/src/main/java/com/pwsolutions/epyl/controller/PrestamoControlador.java

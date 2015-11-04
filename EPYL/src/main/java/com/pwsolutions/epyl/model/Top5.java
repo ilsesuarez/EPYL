@@ -11,18 +11,14 @@ import java.util.List;
  *
  * @author renejesusgv
  */
+
 public class Top5 {
+    
     private List lista_libros;
     private List lista_prestatarios;
     private List lista_prestamistas;
     
     public Top5(){}
-
-    public Top5(List lista_libros, List lista_prestatarios, List lista_prestamistas) {
-        this.lista_libros = lista_libros;
-        this.lista_prestatarios = lista_prestatarios;
-        this.lista_prestamistas = lista_prestamistas;
-    }
 
     public List getLista_libros() {
         return lista_libros;

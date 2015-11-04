@@ -8,7 +8,17 @@ package com.pwsolutions.epyl.model;
 import java.awt.Image;
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.swing.ImageIcon;
 import javax.validation.constraints.NotNull;
 
@@ -16,19 +26,34 @@ import javax.validation.constraints.NotNull;
  *
  * @author renejesusgv
  */
+@Entity
+@Table(name="LIBRO")
 public class Libro  implements Serializable{
     
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_libro;
+    
+
     @NotNull
+    @Column(name = "TITULO",columnDefinition = "VARCHAR(30)")
     private String titulo;    
-    @NotNull
+    
+    @ManyToMany(cascade = CascadeType.REMOVE,
+            fetch = FetchType.EAGER)
     private List<Autor> autores;
-    @NotNull 
+    
+    
     private Image portada = new ImageIcon("/res/").getImage();
-    private Boolean prestado;    
+    
+    @Column(name = "PRESTADO",columnDefinition = "BOOLEAN")
+    private Boolean prestado;   
+    
+    
+    @Column(name = "NUMEROPRESTAMOS",columnDefinition = "INTEGER(5)")
     private Integer numero_prestamos;
     
+    @Lob
     private byte[] libro_arreglo;
     
     public Libro(){}

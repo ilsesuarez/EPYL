@@ -5,32 +5,42 @@
  */
 package com.pwsolutions.epyl.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
  *
  * @author nazara
  */
+
+@Entity
+@Table(name="BIBLIOTECA")
 public class Biblioteca {
-    @NotNull
+    
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_biblioteca;
+    
+    
     @NotNull
+    @Column(name = "NOMBREBIBLIOTECA",columnDefinition = "VARCHAR(100)")
     private String nombre_biblioteca;
+    
+    @NotNull
+    @Column(name = "UBICACIONBIBLIOTECA",columnDefinition = "VARCHAR(200)")
     private String ubicacion_biblioteca;
+    
     @NotNull
     //@ForeignKey
     private String nombre_facultad;
     
     public Biblioteca(){}
-
-    public Biblioteca(String nombre_biblioteca, String ubicacion_biblioteca, String nombre_facultad) {
-        this.nombre_biblioteca = nombre_biblioteca;
-        this.ubicacion_biblioteca = ubicacion_biblioteca;
-        this.nombre_facultad = nombre_facultad;
-    }
 
     public int getId_biblioteca() {
         return id_biblioteca;

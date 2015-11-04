@@ -7,39 +7,50 @@ package com.pwsolutions.epyl.model;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
  *
  * @author renejesusgv
  */
+@Entity
+@Table(name="AUTOR")
 public class Autor implements Serializable{
     
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_autor;
     
     @NotNull
+    @Column(name = "APPATERNOAUTOR",columnDefinition = "VARCHAR(100)")
     private String ap_paternoAutor;
+    
     @NotNull
+    @Column(name = "APMATERNOAUTOR",columnDefinition = "VARCHAR(100)")
     private String ap_maternoAutor;
+    
     @NotNull
+    @Column(name = "NOMBREAUTOR",columnDefinition = "VARCHAR(100)")
     private String nombreAutor;
+    
+    
     @NotNull
+    @ManyToMany(cascade = CascadeType.REMOVE,
+            fetch = FetchType.EAGER)
     private List lista_libros;
     
     //Método Constructor 
     public Autor(){}
-    public Autor(String ap_paternoAutor, 
-                 String ap_maternoAutor, 
-                 String nombreAutor, 
-                 List lista_libros)
-    {
-        this.ap_paternoAutor = ap_paternoAutor;
-        this.ap_maternoAutor = ap_maternoAutor;
-        this.nombreAutor = nombreAutor;
-        this.lista_libros = lista_libros;
-    }
+    
 
     public int getId_autor() {
         return id_autor;

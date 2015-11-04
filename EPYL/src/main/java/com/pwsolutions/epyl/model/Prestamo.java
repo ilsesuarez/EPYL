@@ -7,43 +7,62 @@ package com.pwsolutions.epyl.model;
 
 import java.sql.Time;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
  *
  * @author nazara
  */
+@Entity
+@Table(name="PRESTAMO")
 public class Prestamo {
-    @NotNull
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_prestamo;
+       
     @NotNull
+    @Column(name = "FECHAPRESTAMO",columnDefinition = "DATE")
     private Date fecha_prestamo;
-    private Date fecha_ddevolucion;
+    
+    @NotNull
+    @Column(name = "FECHADEVOLUCION",columnDefinition = "DATE")
+    private Date fecha_devolucion;
+    
+    @NotNull
+    @Column(name = "PLAZO",columnDefinition = "INTEGER(1)")
     private int plazo;
+    
+    @NotNull
+    @Column(name = "APROBADO",columnDefinition = "BOOLEAN")
     private boolean aprobado;
+    
+    @NotNull
+    @Column(name = "HORA",columnDefinition = "TIME")
     private Time hora;
-    private double puntuacion;
+    
+    @NotNull
+    @Column(name = "PUNTACION",columnDefinition = "INTEGER()")
+    private int puntuacion;
+    
+    
     //TODAS SON FORANEAS
+    @NotNull
     private int id_libro;
+    @NotNull
     private Usuario usuario_prestatario;
+    @NotNull
     private Usuario usuario_prestamista;
+    @NotNull
     private int id_biblioteca;
 
     public Prestamo(){}
-    public Prestamo(Date fecha_prestamo, Date fecha_ddevolucion, int plazo, boolean aprobado, Time hora, double puntuacion, int id_libro, Usuario usuario_prestatario, Usuario usuario_prestamista, int id_biblioteca) {
-        this.fecha_prestamo = fecha_prestamo;
-        this.fecha_ddevolucion = fecha_ddevolucion;
-        this.plazo = plazo;
-        this.aprobado = aprobado;
-        this.hora = hora;
-        this.puntuacion = puntuacion;
-        this.id_libro = id_libro;
-        this.usuario_prestatario = usuario_prestatario;
-        this.usuario_prestamista = usuario_prestamista;
-        this.id_biblioteca = id_biblioteca;
-    }
+
 
     public int getId_prestamo() {
         return id_prestamo;
@@ -61,12 +80,12 @@ public class Prestamo {
         this.fecha_prestamo = fecha_prestamo;
     }
 
-    public Date getFecha_ddevolucion() {
-        return fecha_ddevolucion;
+    public Date getFecha_devolucion() {
+        return fecha_devolucion;
     }
 
-    public void setFecha_ddevolucion(Date fecha_ddevolucion) {
-        this.fecha_ddevolucion = fecha_ddevolucion;
+    public void setFecha_devolucion(Date fecha_devolucion) {
+        this.fecha_devolucion = fecha_devolucion;
     }
 
     public int getPlazo() {
@@ -93,11 +112,11 @@ public class Prestamo {
         this.hora = hora;
     }
 
-    public double getPuntuacion() {
+    public int getPuntuacion() {
         return puntuacion;
     }
 
-    public void setPuntuacion(double puntuacion) {
+    public void setPuntuacion(int puntuacion) {
         this.puntuacion = puntuacion;
     }
 

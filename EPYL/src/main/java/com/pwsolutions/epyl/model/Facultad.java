@@ -5,27 +5,32 @@
  */
 package com.pwsolutions.epyl.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
  *
  * @author nazara
  */
+@Entity
+@Table(name="FACULTAD")
 public class Facultad {
-    @NotNull
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String nombre_facultad;
+    
+    
     @NotNull
+    @Column(name = "UBICACIONFACULTAD",columnDefinition = "VARCHAR(200)")
     private String ubicacion_facultad;
     
     public Facultad(){}
-    public Facultad(String nombre_facultad, 
-                      String ubicacion_facultad)
-    {
-            this.nombre_facultad = nombre_facultad;
-            this.ubicacion_facultad = ubicacion_facultad;
-    }
+
 
     public String getNombre_facultad() {
         return nombre_facultad;
