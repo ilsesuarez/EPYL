@@ -29,6 +29,7 @@ public class UsuarioControlador implements Serializable {
     private UsuarioRepository usuario_repository;
     @Autowired
     private LibroRepository libro_repository;
+
     private String busqueda;
     
     @PostConstruct
@@ -85,5 +86,6 @@ public class UsuarioControlador implements Serializable {
 
     private void verifica(Usuario usuario) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
+}
 }

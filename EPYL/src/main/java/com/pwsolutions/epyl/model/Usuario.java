@@ -39,6 +39,7 @@ public class Usuario implements Serializable{
     
     private int puntuacion;
     
+
     private String rol;
     
     private List<Libro> libros;
@@ -126,5 +127,4 @@ public class Usuario implements Serializable{
         this.puntuacion = puntuacion;
     }
 
-   
 }

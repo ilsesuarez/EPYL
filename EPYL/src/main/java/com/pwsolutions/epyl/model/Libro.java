@@ -32,6 +32,7 @@ public class Libro  implements Serializable{
     private byte[] libro_arreglo;
     
     public Libro(){}
+
     public int getId_libro() {
         return id_libro;
     }
