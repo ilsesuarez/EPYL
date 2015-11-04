@@ -23,32 +23,17 @@ and open the template in the editor.
                 </p:selectOneRadio>
             </h:panelGrid> 
         </ui:define>
-        <ui:define name="main" >
-            <h:form>
-                  <p:fileUpload fileUploadListener="#{LibroControlador.handleFileUpload}" 
-                                mode="advanced" 
-                                dragDropSupport="true"
-                                multiple="true" update="messages" 
-                                sizeLimit="10000000" fileLimit="10"  />
-                <p:growl id="messages" showDetail="true" />                               
-                <p:commandButton value="Check"  ajax="false" icon="ui-icon-check"/>
-            </h:form>
-            <h:form>
-                        <h:outputLabel value="busqueda" />
-                        <p:inputText value="#{usuarioController.busqueda}"/>
-                        <p:commandButton actionListener="#{usuarioController.busquedaLibros(usuarioController.busqueda)}"  
-                                         value="buscar"
-                                         update="@form"
-                                         />
-                        <br/>
-                        <p:dataTable value="#{usuarioController.libros}" var="_libro">
-                            <p:column>
-                                <h:graphicImage width="50" value="data:image;base64,#{_libro.imagen}" />
-                                 #{_libro.titulo}-#{_libro.isbn}
-                            </p:column>
-                        </p:dataTable>
-                        
-                    </h:form>
+        <ui:define name="main" >            
+            <h:form id="libro">
+               <p:growl id="growl" globalOnly="true"/>
+               Título:<p:inputText value="#{libroControlador.setTitulo}" /><br/>
+               Autor:<p:inputText value="#{libroControlador.setAutor}" /><br/>  
+               <p:commandButton value="Guardar Libro" 
+                                ajax="false"
+                                action="index"
+                                actionListener="#{LibroControlador.guardaLibro()}"
+                                />
+           </h:form>            
         </ui:define>
         <ui:define name="sidebar" >
             <h:panelGrid columns="1" cellpadding="5">

@@ -14,11 +14,10 @@
     <mvc:annotation-driven />
 
     <context:annotation-config  />
-    <context:component-scan base-package="mx.unam.fciencias.controller"  />
+    <context:component-scan base-package="com.pwsolutions.epyl.controller"  />
 
-    
     <!-- Data Source -->
-       <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource" >
+        <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource" >
             <property name="driverClass" value="org.h2.Driver"/>
             <property name="url" value="jdbc:h2:~/Devlabs/EPYL"/>
             <property name="username" value="admin"/>
@@ -31,7 +30,7 @@
             <property name="jpaVendorAdapter">
                 <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" /> 
             </property>
-            <property name="packagesToScan" value="mx.unam.fciencias.model"/> 
+            <property name="packagesToScan" value="com.pwsolutions.epyl.model"/> 
             <property name="jpaProperties">
                 <props>
                     <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
@@ -51,7 +50,7 @@
                       ref="entityManagerFactory"/>
         </bean>
 
-        <jpa:repositories base-package="mx.unam.fciencias.repository" 
+        <jpa:repositories base-package="com.pwsolutions.epyl.repository" 
                           entity-manager-factory-ref="entityManagerFactory" 
                           transaction-manager-ref="transactionManager"/>
   

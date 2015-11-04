@@ -38,12 +38,12 @@ public class Libro  implements Serializable{
     @NotNull
     @Column(name = "TITULO",columnDefinition = "VARCHAR(30)")
     private String titulo;    
+
+    @NotNull
+    @Column(name = "AUTOR",columnDefinition = "VARCHAR(50)")
+    private String autor;
     
-    @ManyToMany(cascade = CascadeType.REMOVE,
-            fetch = FetchType.EAGER)
-    private List<Autor> autores;
-    
-    
+
     private Image portada = new ImageIcon("/res/").getImage();
     
     @Column(name = "PRESTADO",columnDefinition = "BOOLEAN")
@@ -78,12 +78,12 @@ public class Libro  implements Serializable{
      *
      * @return Autor
      */
-    public List<Autor> getAutores() {
-        return autores;
+    public String getAutor() {
+        return autor;
     }
 
-    public void setAutor(List<Autor> autores) {
-        this.autores = autores;
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
     public Image getPortada() {
