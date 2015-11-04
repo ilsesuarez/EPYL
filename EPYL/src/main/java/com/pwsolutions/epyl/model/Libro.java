@@ -23,7 +23,7 @@ public class Libro  implements Serializable{
     @NotNull
     private String titulo;    
     @NotNull
-    private List<Autor> autores;
+    private String autor;
     @NotNull 
     private Image portada = new ImageIcon("/res/").getImage();
     private Boolean prestado;    
@@ -53,12 +53,12 @@ public class Libro  implements Serializable{
      *
      * @return Autor
      */
-    public List<Autor> getAutores() {
-        return autores;
+    public String getAutor() {
+        return autor;
     }
 
-    public void setAutor(List<Autor> autores) {
-        this.autores = autores;
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
     public Image getPortada() {
