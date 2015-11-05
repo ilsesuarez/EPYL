@@ -5,6 +5,7 @@ com/pwsolutions/epyl/repository/LibroRepository.class
 com/pwsolutions/epyl/model/Autor.class
 com/pwsolutions/epyl/model/Usuario.class
 com/pwsolutions/epyl/repository/PrestamoRepository.class
+com/pwsolutions/epyl/controller/login/LoginControlador.class
 com/pwsolutions/epyl/converter/UsuarioConverter.class
 com/pwsolutions/epyl/repository/AutorRepository.class
 com/pwsolutions/epyl/repository/BibliotecaRepository.class

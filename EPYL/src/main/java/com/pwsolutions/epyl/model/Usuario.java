@@ -56,13 +56,16 @@ public class Usuario implements Serializable{
     private int puntuacion;
     
     @NotNull
-    @Column(name = "rol",columnDefinition = "VARCHAR(10)")
+    @Column(name = "ROL",columnDefinition = "VARCHAR(10)")
     private String rol;
     
+    @Column(name = "HISTORIAL",columnDefinition = "VARCHAR(10000)")
+    private String historial;
     
     @ManyToMany(cascade = CascadeType.REMOVE,
             fetch = FetchType.EAGER)
     private List<Libro> libros;
+    
     
    
     public Usuario(){}
@@ -147,4 +150,15 @@ public class Usuario implements Serializable{
         this.puntuacion = puntuacion;
     }
 
-}
+    public String getHistorial() {
+        return historial;
+    }
+
+    public void setHistorial(String historial) {
+        this.historial = historial;
+    }
+    
+    public void agregaAlHistorial(String nuevaActividad) {
+        historial.concat(nuevaActividad);
+    }
+   }

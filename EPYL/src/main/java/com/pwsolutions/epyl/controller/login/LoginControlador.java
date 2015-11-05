@@ -6,7 +6,7 @@
 package com.pwsolutions.epyl.controller.login;
 
 import org.springframework.context.annotation.Scope;
-import org.springframework.security.core.context.SecurityContextHolder;
+//import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -16,9 +16,9 @@ import org.springframework.stereotype.Controller;
 @Controller("loginController")
 @Scope("request")
 public class LoginControlador {
-        public String getCurrentUser() {
-        return SecurityContextHolder.getContext().getAuthentication().getName();
+//        public String getCurrentUser() {
+//        return SecurityContextHolder.getContext().getAuthentication().getName();
     }
-}
+
        
 

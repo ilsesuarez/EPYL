@@ -2,6 +2,7 @@
 /home/nazara/Devlabs/EPYL/EPYL/src/main/java/com/pwsolutions/epyl/model/Prestamo.java
 /home/nazara/Devlabs/EPYL/EPYL/src/main/java/com/pwsolutions/epyl/model/Usuario.java
 /home/nazara/Devlabs/EPYL/EPYL/src/main/java/com/pwsolutions/epyl/model/Facultad.java
+/home/nazara/Devlabs/EPYL/EPYL/src/main/java/com/pwsolutions/epyl/controller/login/LoginControlador.java
 /home/nazara/Devlabs/EPYL/EPYL/src/main/java/com/pwsolutions/epyl/repository/FacultadRepository.java
 /home/nazara/Devlabs/EPYL/EPYL/src/main/java/com/pwsolutions/epyl/repository/PrestamoRepository.java
 /home/nazara/Devlabs/EPYL/EPYL/src/main/java/com/pwsolutions/epyl/repository/AutorRepository.java

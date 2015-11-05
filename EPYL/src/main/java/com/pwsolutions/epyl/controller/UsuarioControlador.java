@@ -11,8 +11,8 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
+//import org.springframework.mail.SimpleMailMessage;
+//import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 /**
  * 
@@ -35,7 +35,7 @@ public class UsuarioControlador implements Serializable {
     private String busqueda;
     
     @Autowired
-    JavaMailSenderImpl mailSender;
+    //JavaMailSenderImpl mailSender;
     
     @PostConstruct
     public void init(){
@@ -95,4 +95,5 @@ public class UsuarioControlador implements Serializable {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
     }
+    
 }

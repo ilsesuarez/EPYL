@@ -8,6 +8,9 @@ package com.pwsolutions.epyl.controller;
 import com.pwsolutions.epyl.model.Libro;
 import com.pwsolutions.epyl.repository.LibroRepository;
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -46,7 +49,10 @@ public class LibroControlador implements Serializable{
     }   
     
     public void guardaLibro(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
         libro_repository.save(libro);
+        libro.getPropietario().agregaAlHistorial("Libro"+ libro.getTitulo() + "registrado a las " + dateFormat.format(date));
         init();
     }
     

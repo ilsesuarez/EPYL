@@ -34,6 +34,8 @@ public class Libro  implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_libro;
     
+    @Transient
+    private Usuario propietario;
 
     @NotNull
     @Column(name = "TITULO",columnDefinition = "VARCHAR(30)")
@@ -117,5 +119,12 @@ public class Libro  implements Serializable{
     public void setLibro_arreglo(byte[] libro_arreglo) {
         this.libro_arreglo = libro_arreglo;
     }
-     
-}
+
+    public Usuario getPropietario() {
+        return propietario;
+    }
+
+    public void setPropietario(Usuario propietario) {
+        this.propietario = propietario;
+    }
+}    
