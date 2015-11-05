@@ -15,8 +15,8 @@ and open the template in the editor.
         <ui:define name="search" >
             <h:panelGrid columns="3" style="margin-bottom:3px" cellpadding="5">
                 <p:outputLabel for="busqueda" value="Buscar:" />
-                <p:inputText id="buscar" value="#{LibroControlador.libro.buscar}" placeholder="Buscar por..." required="true" label="Búsqueda." />       
-                <p:selectOneRadio id="busqueda" value="#{radioView.buscar}">
+                <p:inputText id="buscar" value="#{LibroControlador.busqueda.input}" placeholder="Buscar por..." required="true" label="Búsqueda." />       
+                <p:selectOneRadio id="busqueda" value="#{LibroControlador.busqueda.tipo}">
                     <f:selectItem itemLabel="Por autor" itemValue="autor" />
                     <f:selectItem itemLabel="Por título" itemValue="titulo" />
                     <f:selectItem itemLabel="Por ambos" itemValue="ambos" />

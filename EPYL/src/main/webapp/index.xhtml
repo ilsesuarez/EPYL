@@ -16,13 +16,13 @@ and open the template in the editor.
         <h:graphicImage library="img" name="login_notice.png" width="140"/>            
         <h:panelGrid columns="2" cellpadding="5">
             <h:outputLabel for="username" value="Nombre de usuario:" />
-            <p:inputText id="username" value="#{UsuarioControlador.usuario.uname}" required="true" label="Nombre de usuario." />
+            <p:inputText id="username" value="#{usuarioControlador.usuario.uname}" required="true" label="Nombre de usuario." />
  
             <h:outputLabel for="password" value="Contraseña:" />
-            <p:password id="password" value="#{UsuarioControlador.usuario.contraseña}" required="true" label="Contraseña." />
+            <p:password id="password" value="#{usuarioControlador.usuario.contraseña}" required="true" label="Contraseña." />
  
             <f:facet name="footer">
-                <p:commandButton value="Iniciar Sesión" actionListener="#{UsuarioControlador.login}"
+                <p:commandButton value="Iniciar Sesión" actionListener="#{usuarioControlador.login()}"
                                  oncomplete="handleLoginRequest(xhr, status, args)" />
             </f:facet>  
         </h:panelGrid>
@@ -30,20 +30,21 @@ and open the template in the editor.
         <ui:define name="main">
         <h:graphicImage library="img" name="reg_notice.png" width="140"/>   
         <h:panelGrid columns="2" cellpadding="5">
-             <h:outputLabel for="nomcompleto" value="Nombre completo:" />
-            <p:inputText id="nomcomp" value="#{UsuarioControlador.usuario.nombre_completo}" required="true" label="Nombre completo." />           
+            <p:growl id="growl" globalOnly="true"/>
+            <h:outputLabel for="nomcompleto" value="Nombre completo:" />
+            <p:inputText id="nomcomp" value="#{usuarioControlador.usuario.nombre_completo}" required="true" label="Nombre completo." />           
             
             <h:outputLabel for="cta" value="Número de cuenta UNAM:" />
-            <p:inputText id="cta" value="#{UsuarioControlador.usuario.no_cta}" required="true" label="Número de cuenta UNAM." />
+            <p:inputText id="cta" value="#{usuarioControlador.usuario.no_cta}" required="true" label="Número de cuenta UNAM." />
             
             <h:outputLabel for="fac" value="Facultad de prosedencia:" />
-            <p:inputText id="fac" value="#{UsuarioControlador.usuario.facultad}" required="true" label="Facultad de prosedencia." />
+            <p:inputText id="fac" value="#{usuarioControlador.usuario.facultad}" required="true" label="Facultad de prosedencia." />
             
             <h:outputLabel for="mail" value="Correo electrónico:" />
-            <p:inputText id="mail" value="#{UsuarioControlador.usuario.uname}" required="true" label="Correo electrónico." />
+            <p:inputText id="mail" value="#{usuarioControlador.usuario.correo}" required="true" label="Correo electrónico." />
             
             <h:outputLabel for="uname" value="Nombre de usuario:" />
-            <p:inputText id="uname" value="#{UsuarioControlador.usuario.uname}" required="true" label="Nombre de usuario." />
+            <p:inputText id="uname" value="#{usuarioControlador.usuario.uname}" required="true" label="Nombre de usuario." />
  
             <h:outputLabel for="pass" value="Contraseña:" />
             <p:password id="pass" value="#{UsuarioControlador.usuario.contraseña}" match="pass2" required="true" label="Contraseña." />
@@ -52,7 +53,7 @@ and open the template in the editor.
             <p:password id="pass2" value="#{UsuarioControlador.usuario.contraseña}" required="true" label="Contraseña." />
             
             <f:facet name="footer">
-                <p:commandButton value="Registrarse" actionListener="#{UsuarioControlador.registrar}"
+                <p:commandButton value="Registrarse" actionListener="#{usuarioControlador.guardaUsuario()}"
                                  oncomplete="handleLoginRequest(xhr, status, args)" />
             </f:facet>  
         </h:panelGrid>

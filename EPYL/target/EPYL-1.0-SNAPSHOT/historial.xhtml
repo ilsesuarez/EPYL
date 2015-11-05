@@ -13,33 +13,33 @@ and open the template in the editor.
       >
     <ui:composition template="/resources/templates/main.xhtml"  >
         <ui:define name="search" >
+            <h:form>
             <h:panelGrid columns="3" style="margin-bottom:3px" cellpadding="5">
                 <p:outputLabel for="busqueda" value="Buscar:" />
-                <p:inputText id="buscar" value="#{LibroControlador.libro.buscar}" placeholder="Buscar por..." required="true" label="Búsqueda." />       
-                <p:selectOneRadio id="busqueda" value="#{radioView.buscar}">
+                <p:inputText id="buscar" value="#{LibroControlador.busqueda.input}" placeholder="Buscar por..." required="true" label="Búsqueda." />       
+                <p:selectOneRadio id="busqueda" value="#{LibroControlador.busqueda.tipo}">
                     <f:selectItem itemLabel="Por autor" itemValue="autor" />
                     <f:selectItem itemLabel="Por título" itemValue="titulo" />
                     <f:selectItem itemLabel="Por ambos" itemValue="ambos" />
                 </p:selectOneRadio>
-            </h:panelGrid> 
+            </h:panelGrid>
+                <h:panelGrid>
+                <p:commandButton process="@parent:@parent" update="@form" value="Process: @parent:parent (Form)" />
+                </h:panelGrid>
+            </h:form>
         </ui:define>
-        <ui:define name="main" >
-            <p:dataTable var="top5lib" value="#{TopControlador.titulos}">
-                <p:column headerText="Título">
-                    <h:outputText value="El Capital" />
-                    <h:outputText value="La Torre Oscura VII" />
-                    <h:outputText value="El Mundo y Sus Demonios" />
-                    <h:outputText value="Los 1,001 Años de la Lengua Española" />
-                    <h:outputText value="Psicología Cuántica y del Espíritu" />
+        <ui:define name="main" >            
+            <h:dataTable value="#{usuarioControlador.usuario.actividades}">
+                <p:column headerText="Status de usuario:">
+                    <h:outputText value="#{usuario.status}" />
                 </p:column>
-                <p:column headerText="Autor">
-                    <h:outputText value="Karl Marx" />
-                    <h:outputText value="Stephen King" />
-                    <h:outputText value="Carl Sagan" />
-                    <h:outputText value="Antonio Alatorre" />
-                    <h:outputText value="Raquel Levinstein" />
+                <p:column headerText="Actividad:">
+                    <h:outputText value="#{actividad.nombre}" />
                 </p:column>
-            </p:dataTable>         
+                <p:column headerText="Fecha:">
+                    <h:outputText value="#{actividad.fecha}" />
+                </p:column>
+            </h:dataTable>
         </ui:define>
         <ui:define name="sidebar" >
             <h:panelGrid columns="1" cellpadding="5">
